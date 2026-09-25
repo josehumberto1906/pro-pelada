@@ -1,0 +1,188 @@
+/* ==========================================
+   RESET E FONTES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f8; /* Fundo cinza claro da área principal */
+    color: #333;
+    display: flex;
+    height: 100vh;
+}
+
+/* ==========================================
+   SIDEBAR (Barra Lateral)
+   ========================================== */
+.sidebar {
+    width: 260px;
+    background-color: #2b2d31; /* Cor escura do Figma */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.btn-quick-match {
+    background-color: transparent;
+    border: 1px dashed #28a745;
+    color: #28a745;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+}
+
+.btn-quick-match:hover {
+    background-color: rgba(40, 167, 69, 0.1);
+}
+
+.menu-item {
+    padding: 12px 15px;
+    border-radius: 8px;
+    color: #aaa;
+    text-decoration: none;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: 500;
+}
+
+.menu-item.active, .menu-item:hover {
+    background-color: #28a745;
+    color: white;
+}
+
+/* ==========================================
+   ÁREA PRINCIPAL E CARDS
+   ========================================== */
+.main-content {
+    flex: 1;
+    padding: 30px 40px;
+    overflow-y: auto;
+}
+
+.header-title {
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra suave do Figma */
+    margin-bottom: 20px;
+}
+
+/* ==========================================
+   FORMULÁRIOS E BOTÕES
+   ========================================== */
+.form-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+input, select {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    flex: 1;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background-color: #28a745; /* Verde do Figma */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+}
+
+/* ==========================================
+   TABELA
+   ========================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th {
+    background-color: #f8f9fa;
+    padding: 12px;
+    text-align: left;
+    color: #666;
+    font-size: 14px;
+    border-bottom: 2px solid #eee;
+}
+
+td {
+    padding: 15px 12px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+/* ==========================================
+   ÁREA DE SORTEIO E EQUIPAS
+   ========================================== */
+.sorteio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.teams-container {
+    display: flex;
+    gap: 20px;
+}
+
+.team-card {
+    flex: 1;
+    border: 1px dashed #ccc;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: #fafafa;
+}
+
+.team-card h4 {
+    text-align: center;
+    color: #28a745;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    padding: 10px;
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pró-Pelada | Management Pro</title>
+    <!-- Ligação ao novo ficheiro CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- BARRA LATERAL (SIDEBAR) -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            ⚽ Pró-Pelada
+        </div>
+        <button class="btn-quick-match">+ Quick Match</button>
+        <nav>
+            <a href="#" class="menu-item">🏠 Home</a>
+            <a href="#" class="menu-item active">⚙️ Matches (Sorteio)</a>
+            <a href="#" class="menu-item">💰 Financial</a>
+            <a href="#" class="menu-item">📊 Stats</a>
+        </nav>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+        
+        <div class="header-title">
+            <h1>Sorteio de Times</h1>
+            <p style="color: #666; margin-top: 5px;">Gerencie os jogadores e faça o sorteio automático.</p>
+            
+            <!-- Botão de teste movido para o topo e mais discreto -->
+            <div style="margin-top: 15px;">
+                <button id="btnTestar" style="background: transparent; border: 1px solid #ccc; padding: 5px 10px; border-radius: 4px; cursor: pointer;">Testar API</button>
+                <span id="resultado" style="margin-left: 10px; font-size: 14px;"></span>
+            </div>
+        </div>
+
+        <!-- CARTÃO 1: FORMULÁRIO -->
+        <div class="card">
+            <h3>Adicionar Novo Jogador</h3>
+            <form id="formJogador" class="form-group">
+                <input type="text" id="nome" placeholder="Nome do Jogador" required>
+                
+                <select id="posicao" required>
+                    <option value="" disabled selected>Escolha a Posição...</option>
+                    <option value="Goleiro">Goleiro</option>
+                    <option value="Zagueiro">Zagueiro</option>
+                    <option value="Lateral">Lateral</option>
+                    <option value="Volante">Volante</option>
+                    <option value="Meio-Campo">Meio-Campo</option>
+                    <option value="Atacante">Atacante</option>
+                </select>
+                
+                <button type="submit" class="btn-primary">Cadastrar</button>
+            </form>
+        </div>
+
+        <!-- CARTÃO 2: TABELA DE PLANTEL -->
+        <div class="card">
+            <h3>Confirmados</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome do Craque</th>
+                        <th>Posição</th>
+                        <th style="text-align: center;">Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="listaJogadores">
+                    <!-- Javascript insere aqui -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- CARTÃO 3: SORTEIO -->
+        <div class="card">
+            <div class="sorteio-header">
+                <h3>Equipes Formadas</h3>
+                <button id="btnSortear" class="btn-primary">🤖 Sortear Times com IA</button>
+            </div>
+
+            <div class="teams-container">
+                <div class="team-card">
+                    <h4>Time A</h4>
+                    <ul id="equipaA">
+                        <li style="color: #aaa; text-align: center; background: transparent; border: none; box-shadow: none;">Arraste jogadores para cá ou use o Sorteio IA</li>
+                    </ul>
+                </div>
+                
+                <div class="team-card">
+                    <h4>Time B</h4>
+                    <ul id="equipaB">
+                        <li style="color: #aaa; text-align: center; background: transparent; border: none; box-shadow: none;">Arraste jogadores para cá ou use o Sorteio IA</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- O SCRIPT CONTINUA NO FINAL -->
+    <script src="script.js"></script>
+</body>
+</html>
