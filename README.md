@@ -1,6 +1,6 @@
-# ⚽ Pró-Pelada | Management Pro
+# ⚽ Gestão 4ssss | Management Pro
 
-O **Pró-Pelada** é uma aplicação web completa, desenvolvida para modernizar e profissionalizar a gestão de partidas de futebol amador (a famosa "pelada"). 
+O **Gestão 4ssss** é uma aplicação web completa, desenvolvida para modernizar e profissionalizar a gestão de partidas de futebol amador (a famosa "pelada"). 
 O sistema permite gerir o plantel de jogadores e realizar sorteios inteligentes com um clique, apresentando uma interface de nível empresarial baseada em dashboards modernos.
 
 ## ✨ Funcionalidades

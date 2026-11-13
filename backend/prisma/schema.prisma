@@ -1,22 +1,61 @@
+// Ficheiro: prisma/schema.prisma
+
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
+// 1. Tabela de Jogadores (O teu Plantel)
 model Jogador {
-  id        Int      @id @default(autoincrement())
-  nome      String
-  posicao   String
-  nota      Int      @default(5)
-  createdAt DateTime @default(now())
+  id           Int           @id @default(autoincrement())
+  nome         String
+  posicao      String
+  
+  // Relacionamentos: Um jogador tem vários pagamentos e estatísticas ao longo do tempo
+  pagamentos   Pagamento[]
+  estatisticas Estatistica[]
 }
 
+// 2. Tabela de Partidas (A Pelada da Semana no 4ssss)
 model Partida {
-  id     Int      @id @default(autoincrement())
-  data   DateTime
-  local  String
-  status String   @default("Agendada")
+  id           Int           @id @default(autoincrement())
+  data         DateTime      @default(now())
+  custoTotal   Float         // Valor do aluguer do campo/churrasco
+  status       String        @default("Agendada") // Ex: Agendada, Finalizada
+  
+  pagamentos   Pagamento[]
+  estatisticas Estatistica[]
+}
+
+// 3. Tabela de Pagamentos (Controlo Financeiro)
+model Pagamento {
+  id           Int      @id @default(autoincrement())
+  valor        Float
+  metodo       String   // Ex: Pix, Dinheiro, Transferência
+  status       String   @default("Pendente") // Ex: Pendente, Pago
+  
+  // Chaves Estrangeiras (Relações)
+  jogadorId    Int
+  partidaId    Int
+  jogador      Jogador  @relation(fields: [jogadorId], references: [id], onDelete: Cascade)
+  partida      Partida  @relation(fields: [partidaId], references: [id], onDelete: Cascade)
+}
+
+// 4. Tabela de Estatísticas (Desempenho em Campo)
+model Estatistica {
+  id             Int      @id @default(autoincrement())
+  gols           Int      @default(0)
+  assistencias   Int      @default(0)
+  cartoesAmarelos Int     @default(0)
+  cartaoVermelho Boolean  @default(false)
+  
+  // Chaves Estrangeiras (Relações)
+  jogadorId      Int
+  partidaId      Int
+  jogador        Jogador  @relation(fields: [jogadorId], references: [id], onDelete: Cascade)
+  partida        Partida  @relation(fields: [partidaId], references: [id], onDelete: Cascade)
 }
